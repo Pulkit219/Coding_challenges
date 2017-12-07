@@ -1,5 +1,5 @@
 /*
-Algorithm
+Algorithm applied
 I) Traverse the given number from rightmost digit, keep traversing till you find a digit which is smaller than the previously traversed digit. For example, if the input number is “534976”, we stop at 4 because 4 is smaller than next digit 9. If we do not find such a digit, then output is “Not Possible”.
 
 II) Now search the right side of above found digit ‘d’ for the smallest digit greater than ‘d’. For “534976″, the right side of 4 contains “976”. The smallest digit greater than 4 is 6.
@@ -27,7 +27,32 @@ function findNext(arr)
   if(i==0)
   {console.log("Not possible");}
 
- 
+   else
+  {
+   //saving that big number and smaller number to the left of it
+   let smlNum =arr1[i-1];
+    let bigNum =i;
+   /*now looping again and checking if we have any other greater number if we have to right of big number and smaller number that we found. 
+     A greater number that is of course greater than that smaller number but smaller than the first number we found.
+     Why are doing this? Because that is an algorithm to find next higher number with same digits. 
+   */
+    for(let j=i+1;j<arr1.length;j++)
+      {//if there are no diigts are those found numbers then of course loop will not be initiated otherwise...
+        if(arr1[j]> smlNum && arr1[j]<arr1[i])
+        {// we assign that other found number here
+          bigNum=j;
+          
+        }
+      } //now we are doing swapping of places the small num and big number 
+    arr1[i-1]=arr1[bigNum];
+          arr1[bigNum]=smlNum;
+    //returning array to see what we get first
+    return arr1;
+    
+
+  
+    
+  }
   
 }
 
