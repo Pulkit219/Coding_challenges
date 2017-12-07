@@ -43,15 +43,20 @@ function findNext(arr)
           bigNum=j;
           
         }
-      } //now we are doing swapping of places the small num and big number 
+      } //now we are doing swapping of places the small num and big number , 3rd part of alogorithm
     arr1[i-1]=arr1[bigNum];
           arr1[bigNum]=smlNum;
-    //returning array to see what we get first
-    return arr1;
+    //returning array 
+    //too many functions applied sounds complicated right but no, here is the  trick
+    //return arr first then apply each function one by one to see output and then further another func to that output to match your needs
+    // so here after swapping , 4th part of alogorithm is to sort the array right after the 1st small num we found
+    // to do that first we simple take part of array, we splice it and then we apply sort fucntion, then check output (to check outputs, pls use chrome dev console)
+    //and then  simply the rest concat and join to main one digit again.
+     return arr1.concat((arr1.splice(i,arr1.length)).sort(function(a, b){return a-b})).join('');
     
 
   
-    
+    // Sorry to make it too long but its fun explaining things in much easier ways as much as possible!!
   }
   
 }
