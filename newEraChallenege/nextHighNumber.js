@@ -32,14 +32,14 @@ function findNext(arr)
    //saving that big number and smaller number to the left of it
    let smlNum =arr1[i-1];
     let bigNum =i;
-   /*now looping again and checking if we have any other greater number if we have to right of big number and smaller number that we found. 
+   /*now looping again and checking if we have any other greater number, if we have one AFTER big number and smaller number to the right. 
      A greater number that is of course greater than that smaller number but smaller than the first number we found.
      Why are doing this? Because that is an algorithm to find next higher number with same digits. 
    */
     for(let j=i+1;j<arr1.length;j++)
-      {//if there are no diigts are those found numbers then of course loop will not be initiated otherwise...
+      {//What if there are no digits afters those found numbers then of course loop will not be initiated otherwise...
         if(arr1[j]> smlNum && arr1[j]<arr1[i])
-        {// we assign that other found number here
+        {// we assign that other found number here and replace it with the one we found before
           bigNum=j;
           
         }
