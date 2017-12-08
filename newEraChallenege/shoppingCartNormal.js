@@ -44,24 +44,29 @@ function addToshoppingCart(...fruitArray)
 		for(let i=0;i<fruitcart.length;i++)
 
 		{
-            //checking for the item
-		    if(fruits.hasOwnProperty(fruitcart[i]))
+	            //checking for the item
+			    if(fruits.hasOwnProperty(fruitcart[i]))
 
-		    {   
-		    	
-                //if item exists then adding the price of that item to an array bill[]
-		      bill.push((fruits[fruitcart[i]]));
+			    {   
+			    	
+	                //if item exists then adding the price of that item to an array bill[]
+			      bill.push((fruits[fruitcart[i]]));
 
-		    }
-              //if not then zero because item does not exists
-		   else{bill.push(0)};
+			    }
+	              //if not then zero because item does not exists
+			   else{bill.push(0)};
 
 		 
 
 		 }
 		 //now we have added the prices of items so bill [] is ready 
 
-	
+	return bill.reduce((sum,prev)=>{
+
+		return sum+=prev;
+
+	},0).toFixed(2);
+
 }
 
  
