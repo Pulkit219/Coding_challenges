@@ -69,8 +69,59 @@ function addToshoppingCart(...fruitArray)
 
 }
 
+ addToshoppingCart('Apple','apple','orange','testing');
+
+ //=============================================================
+
+
+ //METHOD#2
+function addToshoppingCart(fruit,qty,array)
+
+{
+
  
 
-addToshoppingCart('Apple','apple','orange','apple');
+			  let fruits ={
+
+			  orange:1.25,
+
+			  apple:0.60
+
+			}
+			//checking first the fruit entered by user exists in our DB or not if yes..
+
+	  if(fruits.hasOwnProperty(fruit.toLowerCase())){
+
+		     for(let i=0;i<qty;i++)
+
+		     {
+              //fruit exixts so adding it to out basket[] array
+		      array.push(fruits[fruit.toLowerCase()]);
+
+		     }
+
+	  }
+//otherwise return nothing
+  else{ return ; }
 
  
+
+ 
+//once basket [] is complete, finalizing the total amt
+		return array.reduce((sum,prev)=>{
+
+		return sum+=prev;
+
+		},0).toFixed(2);
+
+ 
+
+}
+
+ 
+
+let basket=[];
+
+addToshoppingCart('Orange',3, basket);
+//basket is declared outside so when we add apples it will be added to the same basket[] and returns the total amount after addding everything(oranges and apples)
+addToshoppingCart('apple',4, basket);
