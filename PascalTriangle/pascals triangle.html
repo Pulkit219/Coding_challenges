@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pascal's triangle</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+	
+function calculateFactorial(num)
+{
+var f =1;
+while(num>=1){
+
+f*=num;
+num--;
+}
+ return f;
+}
+
+
+
+
+ function combinations(row,element)
+{
+return (calculateFactorial(row)/( calculateFactorial(row-element)* calculateFactorial(element)));   //nCr formula is being applied please
+                                       //google it 
+}
+
+
+
+
+
+var pascalTriangle= function(lines){
+var i;
+var j;
+var k;
+var elem;
+for(i=1; i<=lines;i++){       //lines we will get input from user
+    k=1;
+    elem=0;
+    for(j=1;j<=2*lines-1;j++){     //nested looping over the first line now why is it 2*lines-1 you'd have to draw that triangle manually to catch the logic 
+
+if(j>=lines+1-i && j<=lines-1+i && k){   //if condition to skip the blocks in between
+
+document.write(combinations(i-1,elem));   //using nCr formula here
+k=0;
+elem++;
+}
+else{
+document.write(" ");
+k=1;
+
+}
+
+}
+document.write("<br>");
+
+}
+}
+
+pascalTriangle(8);
+
+
+</script>
+
+
+</body>
+</html>
