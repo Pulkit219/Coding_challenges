@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>STARS</title>
+
+	<div id></div>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+
+
+//SIMPLE STAR PATTERN WITHOUT SPACES
+/*
+
+*
+**
+***
+****
+*****
+
+*/
+
+for ( var i = 1; i <= 5; i++ )
+{
+
+for ( var j = 1; j <= i; j++ )
+{
+document.write( "*" );
+
+}
+document.writeln( "<br />" );
+}
+
+
+document.writeln( "<br />" );
+
+
+//=================================================
+//SIMPLE STAR PATTERN WITHOUT SPACES
+/*
+
+*****
+****
+***
+**
+*
+
+*/
+
+for ( var i = 5; i >= 1; i-- )
+{
+
+for ( var j = 1; j <= i; j++ )
+{
+document.write('*');
+}
+document.write("<br/>")
+}
+
+
+//=================================================
+document.writeln( "<br />" );
+
+
+
+// STAR PATTERN WITH SPACES
+/*
+
+    *
+   **
+  ***
+ ****
+*****
+
+*/
+//Here the only difference is we have 2 sub-loops , one for space and other one for star printing, that's all teh logic
+for ( var i = 1; i <=5; i++ )
+{
+	//we see spaces are at max at first and then decrements, so it loops and then decreasing
+for (var sp = 1; sp<=(5-i); sp++) {
+		document.write("&nbsp;&nbsp;");
+	}
+for ( var j = 1; j <= i; j++ )
+	//while stars keeps increasing if we see the pattern, so loop is set to i
+{document.write('*');
+}
+document.write("<br/>")
+}
+
+
+
+document.writeln( "<br />" );
+
+
+
+//=================================================
+// STAR PATTERN WITH SPACES
+/*
+
+***** 
+ **** 
+  *** 
+   ** 
+    * 
+
+*/
+
+for ( var i = 1; i <=5; i++ )
+{
+for (var sp = 1; sp<=i-1; sp++) {
+		document.write("&nbsp;&nbsp;");
+	}
+for ( var j = 5; j >= i; j-- )
+{document.write('*');
+}
+document.write("<br/>")
+}
+
+	
+document.writeln( "<br />" );
+
+
+
+
+
+
+
+//PYRAMID
+//         *
+//       * * *
+//     * * * * *
+//   * * * * * * *
+// * * * * * * * * *
+
+//document.write("<center>");
+for(var i = 1; i <= 5; i++) 
+{
+	for (var sp = 1; sp<=(5-i); sp++) {
+		document.write("&nbsp;");
+	}
+	for(var k = i; k >= 1; k--)
+	{
+		document.write("*");
+	}
+	document.write("<br/>"); 
+}
+
+
+
+</script>
+</body>
+</html>
